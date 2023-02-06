@@ -1,14 +1,14 @@
-import React from 'react';
-import styles from './movieCard.module.css';
-import { TiDeleteOutline } from 'react-icons/ti';
-import { CgEditMarkup } from 'react-icons/cg';
-import { BsFillHeartFill } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import styles from './movieCard.module.css'
+import { TiDeleteOutline } from 'react-icons/ti'
+import { CgEditMarkup } from 'react-icons/cg'
+import { BsFillHeartFill, BsHeart } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
 
 export default function MovieCard({ item, deleteById }) {
   let handlerDelete = () => {
-    deleteById(item.id);
-  };
+    deleteById(item.id)
+  }
   return (
     <div className={styles.cardContainer}>
       <div className={styles.movieImgContainer}>
@@ -20,7 +20,11 @@ export default function MovieCard({ item, deleteById }) {
         <p>{item.id}</p> */}
       <TiDeleteOutline onClick={handlerDelete} className={styles.deleteIcon} />
       <CgEditMarkup className={styles.editIcon} />
-      <BsFillHeartFill className={styles.favoriteIcon} />
+      {item.isFavorite ? (
+        <BsFillHeartFill className={styles.favoriteIcon} />
+      ) : (
+        <BsHeart className={styles.favoriteIcon} />
+      )}
     </div>
-  );
+  )
 }
