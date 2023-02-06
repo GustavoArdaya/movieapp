@@ -1,0 +1,36 @@
+.navContainer{
+    position: fixed;
+    z-index: 100;
+    width:100vw;
+    top: 0px;
+    display: flex; 
+    background: #14213d;
+    color:#FCA311;
+    font-size: 27px;
+    justify-content: space-between;
+    align-items: center;
+}
+.navLogoContainer {
+    width: 90px;
+    height: 120px;
+    display: flex;
+    
+    align-items: center;
+    
+
+}
+.navLogo {
+    width: 70px;
+    padding-left: 25px;
+    
+}
+
+.navTitle {
+    padding-right: 30px;
+}
+.navMenu {
+    padding-right: 15px;
+    padding-top:14px;
+    font-size: 35px;
+    
+}

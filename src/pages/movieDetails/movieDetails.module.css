@@ -1,0 +1,23 @@
+.movieContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0e1422;
+  padding: 140px 15px 15px 15px;
+}
+.imgContainer {
+  width: 280px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+
+  height: 400px;
+}
+.movieInfo {
+  padding: 0 17px;
+  color: #e5e5e5;
+}
+.movieName {
+  color: #fca311;
+}
