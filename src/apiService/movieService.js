@@ -11,5 +11,9 @@ const movieService = {
   getById(id) {
     return axios.get(apiBase + `/${id}`).then((res) => res.data);
   },
+
+  deleteById(id) {
+    return axios.delete(apiBase + `/${id}`).then((res) => res.data);
+  },
 };
 export default movieService;

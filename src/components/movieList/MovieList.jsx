@@ -11,11 +11,16 @@ export default function MovieList() {
     movieService.getAll().then((data) => setMovies(data));
   }, []);
 
+  const deleteById = (idToDelete) => {
+    let newData = movies.filter((movie) => movie.id !== idToDelete);
+    setMovies(newData);
+  };
+
   return (
     <div>
       <div className={styles.movieList}>
         {movies.map((item) => (
-          <MovieCard key={item.id} item={item} />
+          <MovieCard key={item.id} item={item} deleteById={deleteById} />
         ))}
       </div>
     </div>
