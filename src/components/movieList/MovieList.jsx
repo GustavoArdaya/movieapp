@@ -1,20 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 
-import styles from './movieList.module.css';
-import movieService from '../../apiService/movieService';
-import MovieCard from '../MovieCard/MovieCard';
+import styles from './movieList.module.css'
+import movieService from '../../apiService/movieService'
+import MovieCard from '../MovieCard/MovieCard'
+import DeleteToast from '../DeleteToast/DeleteToast'
 
 export default function MovieList() {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([])
 
   useEffect(() => {
-    movieService.getAll().then((data) => setMovies(data));
-  }, []);
+    movieService.getAll().then((data) => setMovies(data))
+  }, [])
 
   const deleteById = (idToDelete) => {
-    let newData = movies.filter((movie) => movie.id !== idToDelete);
-    setMovies(newData);
-  };
+    let newData = movies.filter((movie) => movie.id !== idToDelete)
+    setMovies(newData)
+  }
 
   return (
     <div>
@@ -23,8 +24,9 @@ export default function MovieList() {
           <MovieCard key={item.id} item={item} deleteById={deleteById} />
         ))}
       </div>
+      <DeleteToast></DeleteToast>
     </div>
-  );
+  )
 }
 
 // <div>
