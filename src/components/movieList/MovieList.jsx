@@ -17,16 +17,28 @@ export default function MovieList() {
     let newData = movies.filter((movie) => movie.id !== idToDelete)
     setMovies(newData)
   }
+  let idToDelete;
+  const [isDeleteMode, setIsDeleteMode] = useState(false);
+
+  const showDeleteModal = (id) => {
+    setIsDeleteMode(true);
+    idToDelete = id;
+  }
+
+  const hideDeleteModal = () => {
+    setIsDeleteMode(false);
+    
+  }
 
   return (
     <div>
       <div className={styles.movieList}>
         {movies.map((item) => (
-          <MovieCard key={item.id} item={item} deleteById={deleteById} />
+          <MovieCard key={item.id} item={item} showDeleteModal={showDeleteModal} />
         ))}
       </div>
       <div className={styles.popups}>
-      <DeleteModal></DeleteModal>
+      <DeleteModal isDeleteMode = {isDeleteMode} showDeleteModal={showDeleteModal} hideDeleteModal ={hideDeleteModal}></DeleteModal>
       <DeleteToast></DeleteToast>
       </div>
     </div>

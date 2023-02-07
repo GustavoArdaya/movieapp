@@ -5,7 +5,7 @@ import { CgEditMarkup } from 'react-icons/cg'
 import { BsFillHeartFill, BsHeart } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
-export default function MovieCard({ item, deleteById }) {
+export default function MovieCard({ item, deleteById, showDeleteModal }) {
   let handlerDelete = () => {
     deleteById(item.id)
   }
@@ -18,7 +18,7 @@ export default function MovieCard({ item, deleteById }) {
       </div>
       {/* <p className={styles.cardTitle}>{item.name}</p>
         <p>{item.id}</p> */}
-      <TiDeleteOutline onClick={handlerDelete} className={styles.deleteIcon} />
+      <TiDeleteOutline onClick={()=>showDeleteModal()} className={styles.deleteIcon} />
       <CgEditMarkup className={styles.editIcon} />
       {item.isFavorite ? (
         <BsFillHeartFill className={styles.favoriteIcon} />

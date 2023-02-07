@@ -1,5 +1,5 @@
 .DeleteModalContainer {
-    visibility: hidden;
+    
     width: 340px;
     background-color: #e5e5e5c0;
     display: flex;
@@ -10,6 +10,20 @@
     top: 300px;
     padding: 15px 10px;
     border-radius: 10px;
+}
+
+.DeleteModalContainerHidden {
+    visibility: hidden;
+    /* width: 340px;
+    background-color: #e5e5e5c0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 300px;
+    padding: 15px 10px;
+    border-radius: 10px; */
 }
 
 .ModalText {
