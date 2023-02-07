@@ -11,3 +11,8 @@
     justify-content: center;
     
 }
+
+.popups {
+    display: flex;
+    justify-content: center;
+}

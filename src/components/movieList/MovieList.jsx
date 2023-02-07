@@ -4,6 +4,7 @@ import styles from './movieList.module.css'
 import movieService from '../../apiService/movieService'
 import MovieCard from '../MovieCard/MovieCard'
 import DeleteToast from '../DeleteToast/DeleteToast'
+import DeleteModal from '../DeleteModal/DeleteModal'
 
 export default function MovieList() {
   const [movies, setMovies] = useState([])
@@ -24,7 +25,10 @@ export default function MovieList() {
           <MovieCard key={item.id} item={item} deleteById={deleteById} />
         ))}
       </div>
+      <div className={styles.popups}>
+      <DeleteModal></DeleteModal>
       <DeleteToast></DeleteToast>
+      </div>
     </div>
   )
 }
