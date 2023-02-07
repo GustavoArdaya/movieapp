@@ -1,5 +1,6 @@
 .movieList {
     
+    min-height:90vh;
     background-color: #0e1422;
     display: grid;
     grid-template-columns: repeat(auto-fit, 170px);
@@ -15,4 +16,40 @@
 .popups {
     display: flex;
     justify-content: center;
+}
+
+.spinnerContainer {
+    position: fixed;
+    width: 100px;
+    z-index: 1000;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.spinner {
+    width: 100%;
+    opacity: 0.8;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .spinner {
+      animation: loading-spin infinite 1.5s linear;
+    }
+  }
+
+  @keyframes loading-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+.loadingText {
+    color: #fca311;
+    font-size: large;
+    font-weight: bold;
 }

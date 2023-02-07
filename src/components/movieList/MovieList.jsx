@@ -5,12 +5,17 @@ import movieService from '../../apiService/movieService'
 import MovieCard from '../MovieCard/MovieCard'
 import DeleteToast from '../DeleteToast/DeleteToast'
 import DeleteModal from '../DeleteModal/DeleteModal'
+import film_spinner from '../../assets/film_spinner.png'
 
 export default function MovieList() {
   const [movies, setMovies] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    movieService.getAll().then((data) => setMovies(data))
+    movieService.getAll().then((data) => {
+      setMovies(data);
+      setIsLoading(false);
+    })
   }, [])
 
   const deleteById = (idToDelete) => {
@@ -33,6 +38,15 @@ export default function MovieList() {
 
   return (
     <div>
+      <div className={ styles.spinnerContainer }>
+        {isLoading ?
+        <div> 
+          <img className={ styles.spinner } src={film_spinner}></img>
+          <p className={styles.loadingText}>Cargando...</p> 
+        </div>
+        :
+        ""}
+      </div>
       <div className={styles.movieList}>
         {movies.map((item) => (
           <MovieCard key={item.id} item={item} showDeleteModal={showDeleteModal} />
