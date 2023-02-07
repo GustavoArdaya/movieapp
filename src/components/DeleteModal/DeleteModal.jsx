@@ -8,8 +8,8 @@ function DeleteModal({deleteById, idToDelete, showDeleteModal, hideDeleteModal, 
         <h4 className= { styles.ModalText }>Está seguro que quiere eliminar la película?</h4>
       </div>
       <div className={styles.ModalButtons}>
-        <button onClick={()=>hideDeleteModal()}className={ styles.cancelButton }>Cancelar</button>
-        <button onClick={()=>showDeleteModal(idToDelete)}className={ styles.confirmButton }>Confirmar</button>
+        <button onClick={()=>hideDeleteModal()} className={ styles.cancelButton }>Cancelar</button>
+        <button onClick={()=>showDeleteModal(idToDelete)} className={ styles.confirmButton }>Confirmar</button>
       </div>
     </div>
   )
