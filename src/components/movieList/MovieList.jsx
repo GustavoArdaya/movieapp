@@ -17,12 +17,13 @@ export default function MovieList() {
     let newData = movies.filter((movie) => movie.id !== idToDelete)
     setMovies(newData)
   }
-  let idToDelete;
+  let idToDelete = "";
   const [isDeleteMode, setIsDeleteMode] = useState(false);
 
   const showDeleteModal = (id) => {
     setIsDeleteMode(true);
     idToDelete = id;
+    console.log(idToDelete)
   }
 
   const hideDeleteModal = () => {
