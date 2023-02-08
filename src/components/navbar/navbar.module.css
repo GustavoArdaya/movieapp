@@ -28,6 +28,45 @@
 .navTitle {
     padding-right: 30px;
 }
+
+.navLinks {
+    padding-top: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 15px;
+    color:#FCA311;
+    font-weight: 500;
+}
+
+#homeLink {
+    text-decoration: none;
+    color: #FCA311;
+}
+#homeLink:visited {
+    text-decoration: none;
+    color: #FCA311;
+}
+
+#homeLink:hover {
+    opacity: 0.7;
+}
+
+#formLink {
+    text-decoration: none;
+    color: #FCA311;
+}
+
+#formLink:visited {
+    text-decoration: none;
+    color: #FCA311;
+}
+
+#formLink:hover {
+    opacity: 0.7;
+}
+
 .navMenu {
     padding-right: 15px;
     padding-top:14px;

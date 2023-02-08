@@ -9,10 +9,13 @@ export default function Navbar() {
     <div>
       <nav className={styles.navContainer}>
         <div className={styles.navLogoContainer}>
-          <img className={styles.navLogo} src={logo} />
+          <Link to={'/'}><img className={styles.navLogo} src={logo} /></Link>
         </div>
         <h1 className={styles.navTitle}>MovieApp</h1>
-        <Link to={'movies/form/'}>Crear</Link>
+        <ul className={styles.navLinks}>
+          <li><Link id={ styles.homeLink } to={'/'}>Inicio</Link></li>  
+          <li><Link id={ styles.formLink } to={'movies/form/'}>Crear</Link></li>
+        </ul>
         <CgMenuRound className={styles.navMenu} />
       </nav>
     </div>
