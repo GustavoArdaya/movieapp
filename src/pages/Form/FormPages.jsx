@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import movieService from '../../apiService/movieService'
 import styles from './formPages.module.css'
 
 const initMovie = {
@@ -9,6 +11,7 @@ const initMovie = {
 
 export default function FormPages() {
   const [newMovie, setNewMovie] = useState({ initMovie })
+  const navigator = useNavigate()
 
   const handleOnChange = (e) => {
     const nameMovie = e.target.nameMovie
@@ -30,9 +33,15 @@ export default function FormPages() {
     setNewMovie(temp)
   }
 
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    await movieService.create(newMovie)
+    navigator('/')
+  }
+
   return (
     <div>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.formImgContainer}>
           <img className={styles.formImg} src={newMovie.img} alt="movie" />
         </div>
