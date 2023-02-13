@@ -1,4 +1,76 @@
-.navContainer{
+.navContainer {
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
+  top: 0px;
+  display: flex;
+  background: #14213d;
+  color: #fca311;
+  font-size: 27px;
+  justify-content: space-between;
+  align-items: center;
+}
+.navLogoContainer {
+  width: 90px;
+  height: 120px;
+  display: flex;
+
+  align-items: center;
+}
+.navLogo {
+  width: 70px;
+  padding-left: 25px;
+}
+
+.navTitle {
+  padding-right: 30px;
+}
+
+.navLinks {
+  padding-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 15px;
+  color: #fca311;
+  font-weight: 500;
+}
+
+#homeLink {
+  text-decoration: none;
+  color: #fca311;
+}
+#homeLink:visited {
+  text-decoration: none;
+  color: #fca311;
+}
+
+#homeLink:hover {
+  opacity: 0.7;
+}
+
+#formLink {
+  text-decoration: none;
+  color: #fca311;
+}
+
+#formLink:visited {
+  text-decoration: none;
+  color: #fca311;
+}
+
+#formLink:hover {
+  opacity: 0.7;
+}
+
+.navMenu {
+  padding-right: 15px;
+  padding-top: 14px;
+  font-size: 35px;
+}
+
+/* .navContainer{
     position: fixed;
     z-index: 100;
     width:100vw;
@@ -33,4 +105,4 @@
     padding-top:14px;
     font-size: 35px;
     
-}
+} */
