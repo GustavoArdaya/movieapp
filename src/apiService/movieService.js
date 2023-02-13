@@ -22,5 +22,9 @@ const movieService = {
       .then((res) => res.data)
       .catch((err) => console.log(err));
   },
+
+  toggleFavorite(id, data) {
+    return axios.put(apiBase + `/${id}`, data);
+  },
 };
 export default movieService;

@@ -32,6 +32,17 @@ export default function MovieList() {
     console.log(idToDelete);
   };
 
+  const handlerFavorite = (movie) => {
+    let editMovie = { ...movie, isFavorite: !movie.isFavorite };
+    let newState = movies.map((item) =>
+      item.id === editMovie.id ? editMovie : item
+    );
+    movieService
+      .toggleFavorite(movie.id, { isFavorite: !movie.isFavorite })
+      .then(() => setMovies(newState))
+      .catch((error) => console.log(error));
+  };
+
   const hideDeleteModal = () => {
     setIsDeleteMode(false);
   };
@@ -55,6 +66,7 @@ export default function MovieList() {
             item={item}
             showDeleteModal={showDeleteModal}
             deleteById={deleteById}
+            handlerFavorite={handlerFavorite}
           />
         ))}
       </div>

@@ -5,7 +5,7 @@ import { CgEditMarkup } from 'react-icons/cg';
 import { BsFillHeartFill, BsHeart } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
-export default function MovieCard({ item, deleteById }) {
+export default function MovieCard({ item, deleteById, handlerFavorite }) {
   let handlerDelete = () => {
     deleteById(item.id);
   };
@@ -21,9 +21,15 @@ export default function MovieCard({ item, deleteById }) {
       <TiDeleteOutline onClick={handlerDelete} className={styles.deleteIcon} />
       <CgEditMarkup className={styles.editIcon} />
       {item.isFavorite ? (
-        <BsFillHeartFill className={styles.favoriteIcon} />
+        <BsFillHeartFill
+          onClick={() => handlerFavorite(item)}
+          className={styles.favoriteIcon}
+        />
       ) : (
-        <BsHeart className={styles.favoriteIcon} />
+        <BsHeart
+          onClick={() => handlerFavorite(item)}
+          className={styles.favoriteIcon}
+        />
       )}
     </div>
   );
