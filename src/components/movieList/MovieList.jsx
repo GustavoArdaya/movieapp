@@ -1,39 +1,39 @@
-import React, { useEffect, useState } from 'react'
-import styles from './movieList.module.css'
-import movieService from '../../apiService/movieService'
-import MovieCard from '../MovieCard/MovieCard'
-import DeleteToast from '../DeleteToast/DeleteToast'
-import DeleteModal from '../DeleteModal/DeleteModal'
-import film_spinner from '../../assets/film_spinner.png'
+import React, { useEffect, useState } from 'react';
+import styles from './movieList.module.css';
+import movieService from '../../apiService/movieService';
+import MovieCard from '../MovieCard/MovieCard';
+import DeleteToast from '../DeleteToast/DeleteToast';
+import DeleteModal from '../DeleteModal/DeleteModal';
+import film_spinner from '../../assets/film_spinner.png';
 
 export default function MovieList() {
-  const [movies, setMovies] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
+  const [movies, setMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   //const [isDeleteMode, setIsDeleteMode] = useState(false)
 
   useEffect(() => {
     movieService.getAll().then((data) => {
-      setMovies(data)
-      setIsLoading(false)
-    })
-  }, [])
+      setMovies(data);
+      setIsLoading(false);
+    });
+  }, []);
 
   const deleteById = (idToDelete) => {
-    let newData = movies.filter((movie) => movie.id !== idToDelete)
-    setMovies(newData)
-  }
-  let idToDelete = ''
-  const [isDeleteMode, setIsDeleteMode] = useState(false)
+    let newData = movies.filter((movie) => movie.id !== idToDelete);
+    setMovies(newData);
+  };
+  let idToDelete = '';
+  const [isDeleteMode, setIsDeleteMode] = useState(false);
 
   const showDeleteModal = (id) => {
-    setIsDeleteMode(true)
-    idToDelete = id
-    console.log(idToDelete)
-  }
+    setIsDeleteMode(true);
+    idToDelete = id;
+    console.log(idToDelete);
+  };
 
   const hideDeleteModal = () => {
-    setIsDeleteMode(false)
-  }
+    setIsDeleteMode(false);
+  };
 
   return (
     <div>
@@ -52,7 +52,8 @@ export default function MovieList() {
           <MovieCard
             key={item.id}
             item={item}
-            showDeleteModal={showDeleteModal}
+            deleteById={deleteById}
+            // showDeleteModal={showDeleteModal}
           />
         ))}
       </div>
@@ -62,10 +63,10 @@ export default function MovieList() {
           showDeleteModal={showDeleteModal}
           hideDeleteModal={hideDeleteModal}
         ></DeleteModal>
-        <DeleteToast></DeleteToast>
+        {/* <DeleteToast></DeleteToast> */}
       </div>{' '}
     </div>
-  )
+  );
 }
 
 // <div>
