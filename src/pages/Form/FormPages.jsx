@@ -4,26 +4,26 @@ import movieService from '../../apiService/movieService'
 import styles from './formPages.module.css'
 
 const initMovie = {
-  name: 'defoult name',
+  name: 'default name',
   img: 'https://pharmamex.com/images/default.png',
   isFavorite: false,
 }
 
 export default function FormPages() {
-  const [newMovie, setNewMovie] = useState({ initMovie })
+  const [newMovie, setNewMovie] = useState(initMovie)
   const navigator = useNavigate()
 
   const handleOnChange = (e) => {
-    const nameMovie = e.target.nameMovie
+    const name = e.target.name
     const value = e.target.value
-    const temp = (newMovie[nameMovie] = value)
-    setNewMovie({ ...newMovie, temp })
+    newMovie[name] = value
+    setNewMovie({ ...newMovie })
     console.log(newMovie)
   }
 
   const handleTitleOnChange = (e) => {
     console.log(e.target.name)
-    const temp = { ...newMovie, title: e.target.value }
+    const temp = { ...newMovie, name: e.target.value }
     setNewMovie(temp)
   }
 
@@ -48,16 +48,16 @@ export default function FormPages() {
         <section className={styles.textInputsContainer}>
           <input
             value={newMovie.name}
-            onChange={handleTitleOnChange}
+            onChange={handleOnChange}
             className={styles.nameInput}
             type="text"
-            name="title"
+            name="name"
             placeholder="movie name"
           />
 
           <textarea
             value={newMovie.img}
-            onChange={handleImgOnChange}
+            onChange={handleOnChange}
             className={styles.urlInput}
             type="textarea"
             name="img"

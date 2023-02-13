@@ -63,7 +63,7 @@ export default function MovieList() {
           hideDeleteModal={hideDeleteModal}
         ></DeleteModal>
         <DeleteToast></DeleteToast>
-      </div>
+      </div>{' '}
     </div>
   )
 }

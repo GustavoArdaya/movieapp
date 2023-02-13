@@ -13,7 +13,10 @@ const movieService = {
   },
 
   deleteById(id) {
-    return axios.delete(apiBase + `/${id}`).then((res) => res.data)
+    return axios
+      .delete(apiBase + `/${id}`)
+      .then((res) => res.data)
+      .catch((err) => console.log(err))
   },
 
   create(data) {
