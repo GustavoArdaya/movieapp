@@ -67,7 +67,7 @@ export default function MovieList() {
           ''
         )}
       </div>
-      <div className={styles.searchBarContainer}>
+      {/* <div className={styles.searchBarContainer}>
         <input
           onChange={filterByName}
           className={styles.searchInput}
@@ -75,8 +75,8 @@ export default function MovieList() {
           value={input}
         />
         <button className={styles.searchButton}>Buscar</button>
-      </div>
-      {/* <SearchBar filterByName={filterByName} /> */}
+      </div> */}
+      <SearchBar filterByName={filterByName} input={input} />
       <div className={styles.movieList}>
         {movies.map((item) => (
           <MovieCard
