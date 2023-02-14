@@ -1,8 +1,14 @@
-.navContainer {
+.headerContainer {
   position: fixed;
   z-index: 100;
   width: 100vw;
   top: 0px;
+}
+.navContainer {
+  /* position: fixed;
+  z-index: 100;
+  width: 100vw;
+  top: 0px; */
   display: flex;
   background: #14213d;
   color: #fca311;

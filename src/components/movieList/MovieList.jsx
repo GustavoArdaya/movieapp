@@ -59,7 +59,7 @@ export default function MovieList() {
           ''
         )}
       </div>
-      <div className={styles.movieList}>
+        <div className={styles.movieList}>
         {movies.map((item) => (
           <MovieCard
             key={item.id}

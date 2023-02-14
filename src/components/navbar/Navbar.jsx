@@ -3,10 +3,11 @@ import styles from './navbar.module.css';
 import { CgMenuRound } from 'react-icons/cg';
 import logo from '../../assets/Logo.png';
 import { Link } from 'react-router-dom';
+import SearchBar from '../SearchBar/SearchBar';
 
 export default function Navbar() {
   return (
-    <div>
+    <div className={styles.headerContainer}>
       <nav className={styles.navContainer}>
         <div className={styles.navLogoContainer}>
           <Link to={'/'}>
@@ -28,6 +29,7 @@ export default function Navbar() {
         </ul>
         <CgMenuRound className={styles.navMenu} />
       </nav>
+      <SearchBar/>
     </div>
   );
 }
