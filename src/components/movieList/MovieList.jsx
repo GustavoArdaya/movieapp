@@ -3,20 +3,28 @@ import React, { useEffect, useState } from 'react';
 import styles from './movieList.module.css';
 import movieService from '../../apiService/movieService';
 import MovieCard from '../MovieCard/MovieCard';
-import DeleteToast from '../DeleteToast/DeleteToast';
-import DeleteModal from '../DeleteModal/DeleteModal';
+// import DeleteToast from '../DeleteToast/DeleteToast';
+// import DeleteModal from '../DeleteModal/DeleteModal';
+import SearchBar from '../SearchBar/SearchBar';
 import film_spinner from '../../assets/film_spinner.png';
 
 export default function MovieList() {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [input, setInput] = useState('');
 
   useEffect(() => {
-    movieService.getAll().then((data) => {
+    movieService.getAll(input).then((data) => {
       setMovies(data);
       setIsLoading(false);
     });
-  }, []);
+  }, [input]);
+
+  const filterByName = (e) => {
+    let name = e.target.value;
+    console.log(name);
+    setInput(name);
+  };
 
   const deleteById = async (idToDelete) => {
     await movieService.deleteById(idToDelete);
@@ -59,7 +67,17 @@ export default function MovieList() {
           ''
         )}
       </div>
-        <div className={styles.movieList}>
+      <div className={styles.searchBarContainer}>
+        <input
+          onChange={filterByName}
+          className={styles.searchInput}
+          type='text'
+          value={input}
+        />
+        <button className={styles.searchButton}>Buscar</button>
+      </div>
+      {/* <SearchBar filterByName={filterByName} /> */}
+      <div className={styles.movieList}>
         {movies.map((item) => (
           <MovieCard
             key={item.id}
