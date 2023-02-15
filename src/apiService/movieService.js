@@ -8,6 +8,10 @@ const movieService = {
       .then((data) => data);
   },
 
+  getFavorite() {
+    return axios.get(apiBase + "?isFavorite=true").then((res) => res.data);
+  },
+
   getById(id) {
     return axios.get(apiBase + `/${id}`).then((res) => res.data);
   },

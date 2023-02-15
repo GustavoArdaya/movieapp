@@ -5,6 +5,7 @@ import MovieDetails from './pages/movieDetails/MovieDetails';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import FormPages from './pages/Form/FormPages';
+import FavoriteMovies from './pages/favoriteMovies/FavoriteMovies';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/movies/:id' element={<MovieDetails />}></Route>
         <Route path='/' element={<MovieList />}></Route>
         <Route path='movies/form/' element={<FormPages />}></Route>
+        <Route path= '/favoriteMovies/' element={<FavoriteMovies/>}></Route>
       </Routes>
 
       <Footer />
