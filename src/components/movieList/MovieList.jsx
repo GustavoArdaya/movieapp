@@ -40,11 +40,17 @@ export default function MovieList() {
     console.log(idToDelete);
   };
 
+  // funcion que crea un objeto nuevo (editMovie)que tiene el contenido
+  // del objeto original, pero remplaza la propiedad isFavorite por su opuesto
   const handlerFavorite = (movie) => {
     let editMovie = { ...movie, isFavorite: !movie.isFavorite };
+
+    // crea un nuevo estado donde mapea todos los objetos, pero remplazando el objeto a remplazar por editMovie
     let newState = movies.map((item) =>
       item.id === editMovie.id ? editMovie : item
     );
+
+    // llama al método movieService, utilizando el parámetro id, remplazando el valor de isFavorite por su opuesto
     movieService
       .toggleFavorite(movie.id, { isFavorite: !movie.isFavorite })
       .then(() => setMovies(newState))

@@ -25,6 +25,8 @@ const movieService = {
       .catch((err) => console.log(err));
   },
 
+  // funcion que recibe por parámetro el id y el objeto, y lo que hace es
+  // remplazar a traves de un put, el valor de isFavorite dentro del objeto en concreto  de la api
   toggleFavorite(id, data) {
     return axios.put(apiBase + `/${id}`, data);
   },
