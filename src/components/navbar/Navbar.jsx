@@ -1,28 +1,33 @@
-import React from 'react';
-import styles from './navbar.module.css';
-import { CgMenuRound } from 'react-icons/cg';
-import logo from '../../assets/Logo.png';
-import { Link } from 'react-router-dom';
+import React from "react";
+import styles from "./navbar.module.css";
+import { CgMenuRound } from "react-icons/cg";
+import logo from "../../assets/Logo.png";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
     <div className={styles.headerContainer}>
       <nav className={styles.navContainer}>
         <div className={styles.navLogoContainer}>
-          <Link to={'/'}>
+          <Link to={"/"}>
             <img className={styles.navLogo} src={logo} />
           </Link>
         </div>
         <h1 className={styles.navTitle}>MovieApp</h1>
         <ul className={styles.navLinks}>
           <li>
-            <Link id={styles.homeLink} to={'/'}>
+            <Link id={styles.homeLink} to={"/"}>
               Inicio
             </Link>
           </li>
           <li>
-            <Link id={styles.formLink} to={'movies/form/'}>
+            <Link id={styles.formLink} to={"movies/form/"}>
               Crear
+            </Link>
+          </li>
+          <li>
+            <Link id={styles.favoriteLink} to={"favoriteMovies/"}>
+              Mis Favoritas
             </Link>
           </li>
         </ul>

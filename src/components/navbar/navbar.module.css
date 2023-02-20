@@ -70,6 +70,19 @@
   opacity: 0.7;
 }
 
+#favoriteLink {
+  text-decoration: none;
+  color: #fca311;
+}
+
+#favoriteLink:visited {
+  text-decoration: none;
+  color: #fca311;
+}
+
+#favoriteLink:hover {
+  opacity: 0.7;
+}
 .navMenu {
   padding-right: 15px;
   padding-top: 14px;
