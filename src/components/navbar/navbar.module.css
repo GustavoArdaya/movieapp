@@ -15,6 +15,7 @@
   font-size: 27px;
   justify-content: space-between;
   align-items: center;
+  padding: 0 10px;
 }
 .navLogoContainer {
   width: 90px;
@@ -32,7 +33,7 @@
   padding-right: 30px;
 }
 
-.navLinks {
+.navLinksVisible {
   padding-top: 12px;
   display: flex;
   justify-content: center;
@@ -89,39 +90,36 @@
   font-size: 35px;
 }
 
-/* .navContainer{
-    position: fixed;
-    z-index: 100;
-    width:100vw;
-    top: 0px;
-    display: flex; 
-    background: #14213d;
-    color:#FCA311;
-    font-size: 27px;
-    justify-content: space-between;
-    align-items: center;
-}
-.navLogoContainer {
-    width: 90px;
-    height: 120px;
+@media (max-width: 760px) {
+  .navLinksVisible {
     display: flex;
-    
-    align-items: center;
-    
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    top: 146px;
+    background-color: #14213d;
+    align-content: center;
+    padding: 15px;
+    border-radius: 0 0 15px 15px;
+  }
+  .navLinksInvisible {
+    display: none;
+  }
 
+  .navLinks li {
+    font-weight: bold;
+  }
+  .navMenu {
+    display: inline;
+  }
 }
-.navLogo {
-    width: 70px;
-    padding-left: 25px;
-    
+@media (min-width: 761px) {
+  .navLinks {
+    display: flex;
+    padding-right: 25px;
+    gap: 3.5rem;
+  }
+  .navMenu {
+    display: none;
+  }
 }
-
-.navTitle {
-    padding-right: 30px;
-}
-.navMenu {
-    padding-right: 15px;
-    padding-top:14px;
-    font-size: 35px;
-    
-} */

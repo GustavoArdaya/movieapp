@@ -1,37 +1,51 @@
-import React from "react";
-import styles from "./navbar.module.css";
-import { CgMenuRound } from "react-icons/cg";
-import logo from "../../assets/Logo.png";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styles from './navbar.module.css';
+import { CgMenuRound } from 'react-icons/cg';
+import logo from '../../assets/Logo.png';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function Navbar() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handlerHamburgerMenu = () => {
+    setIsVisible(!isVisible);
+  };
   return (
     <div className={styles.headerContainer}>
       <nav className={styles.navContainer}>
         <div className={styles.navLogoContainer}>
-          <Link to={"/"}>
+          <Link to={'/'}>
             <img className={styles.navLogo} src={logo} />
           </Link>
+          <h1 className={styles.navTitle}>MovieApp</h1>
         </div>
-        <h1 className={styles.navTitle}>MovieApp</h1>
-        <ul className={styles.navLinks}>
+
+        <ul
+          className={
+            isVisible ? styles.navLinksVisible : styles.navLinksInvisible
+          }
+        >
           <li>
-            <Link id={styles.homeLink} to={"/"}>
+            <Link id={styles.homeLink} to={'/'}>
               Inicio
             </Link>
           </li>
           <li>
-            <Link id={styles.formLink} to={"movies/form/"}>
+            <Link id={styles.formLink} to={'movies/form/'}>
               Crear
             </Link>
           </li>
           <li>
-            <Link id={styles.favoriteLink} to={"favoriteMovies/"}>
+            <Link id={styles.favoriteLink} to={'favoriteMovies/'}>
               Mis Favoritas
             </Link>
           </li>
         </ul>
-        <CgMenuRound className={styles.navMenu} />
+        <CgMenuRound
+          onClick={handlerHamburgerMenu}
+          className={styles.navMenu}
+        />
       </nav>
     </div>
   );
