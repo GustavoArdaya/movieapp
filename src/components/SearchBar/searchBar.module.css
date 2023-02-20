@@ -1,4 +1,6 @@
 .searchBarContainer {
+  z-index: 1000;
+  width:100%;
   background-color: #14213d;
   display: flex;
   justify-content: center;
@@ -6,10 +8,12 @@
   gap: 20px;
   padding: 15px;
   margin-top: 120px;
+  position:fixed;
+  top:120;
 }
 
 .searchInput {
-  z-index: 1000;
+  
   width: 62vw;
   height: 25px;
   border-radius: 10px;
