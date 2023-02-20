@@ -114,10 +114,16 @@
   }
 }
 @media (min-width: 761px) {
-  .navLinks {
-    display: flex;
-    padding-right: 25px;
-    gap: 3.5rem;
+  .navLinksInvisible {
+    padding-top: 12px;
+  padding-right: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 15px;
+  color: #fca311;
+  font-weight: 500;
   }
   .navMenu {
     display: none;
