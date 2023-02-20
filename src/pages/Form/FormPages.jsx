@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import movieService from '../../apiService/movieService';
 import styles from './formPages.module.css';
 
@@ -10,8 +10,17 @@ const initMovie = {
 };
 
 export default function FormPages() {
+  let { id } = useParams();
+  const [isEditMode, setIsEditMode] = useState(false);
   const [newMovie, setNewMovie] = useState(initMovie);
   const navigator = useNavigate();
+
+   useEffect(() => {
+     movieService.getById(id).then((res) => {
+      setNewMovie(res)
+      setIsEditMode(true);
+    });
+   }, [id]);
 
   const handleOnChange = (e) => {
     const name = e.target.name;
@@ -43,7 +52,7 @@ export default function FormPages() {
     <div>
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.formImgContainer}>
-          <img className={styles.formImg} src={newMovie.img} alt='movie' />
+          <img className={styles.formImg} src={newMovie.img} alt= {newMovie.name} />
         </div>
         <section className={styles.textInputsContainer}>
           <textarea
