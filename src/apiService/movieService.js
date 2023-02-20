@@ -1,5 +1,5 @@
-import axios from 'axios';
-const apiBase = 'https://63d9187974f386d4efe47837.mockapi.io/movies';
+import axios from "axios";
+const apiBase = "https://63d9187974f386d4efe47837.mockapi.io/movies";
 
 const movieService = {
   // getAll() {
@@ -7,11 +7,11 @@ const movieService = {
   //     .then((res) => res.json())
   //     .then((data) => data);
   // },
-  getAll(name = '') {
+  getAll(name = "") {
     return axios.get(apiBase + `?name=${name}`).then((res) => res.data);
   },
   getFavorite() {
-    return axios.get(apiBase + '?isFavorite=true').then((res) => res.data);
+    return axios.get(apiBase + "?isFavorite=true").then((res) => res.data);
   },
 
   getById(id) {
@@ -20,6 +20,11 @@ const movieService = {
 
   deleteById(id) {
     return axios.delete(apiBase + `/${id}`).then((res) => res.data);
+  },
+
+  editById(id, data) {
+    console.log(id, data);
+    return axios.put(apiBase + `/${id}`, data).then((res) => res.data);
   },
 
   create(data) {
