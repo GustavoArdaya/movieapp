@@ -14,6 +14,7 @@ function App() {
 
       <Routes>
         <Route path='/movies/:id' element={<MovieDetails />}></Route>
+        <Route path='edit/:id' element={<FormPages />}></Route>
         <Route path='/' element={<MovieList />}></Route>
         <Route path='movies/form/' element={<FormPages />}></Route>
         <Route path= '/favoriteMovies/' element={<FavoriteMovies/>}></Route>

@@ -22,6 +22,11 @@ const movieService = {
     return axios.delete(apiBase + `/${id}`).then((res) => res.data);
   },
 
+  editById(id, data) {
+    // console.log(id, data);
+    return axios.put(apiBase + `/${id}`, data).then((res) => res.data);
+  },
+
   create(data) {
     return axios
       .post(apiBase, data)
