@@ -116,7 +116,7 @@ export default function FormPages() {
           <textarea
             value={newMovie.sinopsis}
             onChange={handleOnChange}
-            className={styles.urlInput}
+            className={styles.sinopsisInput}
             type="textarea"
             name="sinopsis"
             placeholder="sinopsis"
