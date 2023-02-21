@@ -26,6 +26,10 @@
   right: 10px;
 }
 
+.deleteIcon:hover {
+  opacity: 0.7;
+}
+
 .editIcon {
   color: #fca311;
   font-size: 19px;
@@ -34,10 +38,18 @@
   right: 12px;
 }
 
+.editIcon:hover {
+  opacity: 0.7;
+}
+
 .favoriteIcon {
   color: #fca311;
   font-size: 17px;
   position: absolute;
   bottom: 10px;
   left: 10px;
+  
+}
+.favoriteIcon:hover {
+  opacity: 0.7;
 }
