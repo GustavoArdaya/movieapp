@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import movieService from "../../apiService/movieService";
-import styles from "./formPages.module.css";
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import movieService from '../../apiService/movieService';
+import styles from './formPages.module.css';
 
 const initMovie = {
-  name: "",
-  img: "https://pharmamex.com/images/default.png",
+  name: '',
+  img: 'https://pharmamex.com/images/default.png',
   isFavorite: false,
 };
 
@@ -47,13 +47,13 @@ export default function FormPages() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await movieService.create(newMovie);
-    navigator("/");
+    navigator('/');
   };
 
   const handleEdit = async (e) => {
     e.preventDefault();
     await movieService.editById(id, newMovie);
-    navigator("/");
+    navigator('/');
     console.log(e);
   };
 
@@ -75,51 +75,51 @@ export default function FormPages() {
             value={newMovie.img}
             onChange={handleOnChange}
             className={styles.urlInput}
-            type="textarea"
-            name="img"
-            placeholder="introduce url"
+            type='textarea'
+            name='img'
+            placeholder='introduce url'
           />
           <input
             value={newMovie.name}
             onChange={handleOnChange}
             className={styles.nameInput}
-            type="text"
-            name="name"
-            placeholder="movie name"
+            type='text'
+            name='name'
+            placeholder='movie name'
           />
 
           <input
             value={newMovie.director}
             onChange={handleOnChange}
             className={styles.nameInput}
-            type="text"
-            name="director"
-            placeholder="director"
+            type='text'
+            name='director'
+            placeholder='director'
           />
           <input
             value={newMovie.year}
             onChange={handleOnChange}
             className={styles.nameInput}
-            type="text"
-            name="year"
-            placeholder="year"
+            type='text'
+            name='year'
+            placeholder='year'
           />
 
           <input
             value={newMovie.genre}
             onChange={handleOnChange}
             className={styles.nameInput}
-            type="text"
-            name="genre"
-            placeholder="genre"
+            type='text'
+            name='genre'
+            placeholder='genre'
           />
           <textarea
             value={newMovie.sinopsis}
             onChange={handleOnChange}
             className={styles.sinopsisInput}
-            type="textarea"
-            name="sinopsis"
-            placeholder="sinopsis"
+            type='textarea'
+            name='sinopsis'
+            placeholder='sinopsis'
           />
           {/* <input
             value={newMovie.sinopsis}
@@ -130,46 +130,11 @@ export default function FormPages() {
             placeholder='Sinopsis'
           /> */}
 
-          <button className={styles.submitButton} type="submit">
-            {isEditMode ? "Editar" : "Crear"}
+          <button className={styles.submitButton} type='submit'>
+            {isEditMode ? 'Editar' : 'Crear'}
           </button>
         </section>
       </form>
     </div>
   );
 }
-// import React from "react";
-// import styles from "./formPages.module.css";
-
-// export default function FormPages() {
-//   return (
-//     <div>
-//       <form className={styles.form}>
-//         <div className={styles.formImgContainer}>
-//           <img
-//             className={styles.formImg}
-//             src="https://pharmamex.com/images/default.png"
-//             alt="movie"
-//           />
-//         </div>
-//         <section className={styles.textInputsContainer}>
-//           <input
-//             className={styles.nameInput}
-//             type="text"
-//             name="title"
-//             placeholder="movie name"
-//           />
-//           <textarea
-//             className={styles.urlInput}
-//             type="textarea"
-//             name="img"
-//             placeholder="introduce url"
-//           />
-//           <button className={styles.submitButton} type="submit">
-//             Crear
-//           </button>
-//         </section>
-//       </form>
-//     </div>
-//   );
-// }

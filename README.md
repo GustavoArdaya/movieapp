@@ -1,14 +1,15 @@
-# My Favorite Movies
+# My Favorite Moviesss
 
 ## Miembros
 
 - Carmen Blanco Delgado
 - Esther Reyes Seyer
-- Mihaela Gheorghiu 
+- Mihaela Gheorghiu
 - Gustavo Ardaya Zubieta
 - Daniel Gallego López
 
 ## Briefing
+
 Un equipo backend de una empresa relacionada con el mundo audiovisual, nos pide que desarrollemos un frontend para que sus clientes puedan gestionar su catálogo de películas.
 
 ### Requisitos Funcionales:
@@ -39,13 +40,15 @@ Un equipo backend de una empresa relacionada con el mundo audiovisual, nos pide 
 - React hooks : useState, useEffect (estado y efectos en el ciclo de vida)
 - Persistencia de datos con API Rest
 
-## 💻Tecnologías 
+## 💻Tecnologías
+
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
- ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
 ## 🛠️Herramientas
+
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 ![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)
@@ -53,6 +56,7 @@ Un equipo backend de una empresa relacionada con el mundo audiovisual, nos pide 
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
 ## Enlaces de interés
+
 Trello: https://trello.com/b/J6xzn4WY/my-favorite-movies<br>
 Figma: https://www.figma.com/file/a6HGpYLO1OU5SXwew6dxBK/My-Favourite-Movies?node-id=21%3A140&t=vjLNqlCVn6g8oS42-0<br>
 JSONLint: https://jsonlint.com/<br>
@@ -82,10 +86,15 @@ JSONLint: https://jsonlint.com/<br>
   - Seleccion de favoritas
 
 ### Imágenes de Ejemplo del Proyecto
-#### Página Principal
-![MvApp01](https://user-images.githubusercontent.com/118914949/216572779-f24e6a10-113d-4b9a-a8fd-881dc95e628d.jpg)
-#### Detalle de Película
-![MvApp02](https://user-images.githubusercontent.com/118914949/216572819-26317fb8-bef8-4bdf-a75f-7744fe4bb6fc.jpg)
-#### Ejemplo de objeto en API
-![MvApp03](https://user-images.githubusercontent.com/118914949/216572881-33f3278d-38fc-4c16-b983-bb32e1fd3fa0.jpg)
 
+#### Página Principal
+
+![MvApp01](https://user-images.githubusercontent.com/118914949/216572779-f24e6a10-113d-4b9a-a8fd-881dc95e628d.jpg)
+
+#### Detalle de Película
+
+![MvApp02](https://user-images.githubusercontent.com/118914949/216572819-26317fb8-bef8-4bdf-a75f-7744fe4bb6fc.jpg)
+
+#### Ejemplo de objeto en API
+
+![MvApp03](https://user-images.githubusercontent.com/118914949/216572881-33f3278d-38fc-4c16-b983-bb32e1fd3fa0.jpg)
