@@ -5,8 +5,6 @@
 ## Miembros
 
 - Carmen Blanco Delgado
-- Esther Reyes Seyer
-- Mihaela Gheorghiu
 - Gustavo Ardaya Zubieta
 - Daniel Gallego López
 
